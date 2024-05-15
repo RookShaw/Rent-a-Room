@@ -1,0 +1,17 @@
+<h2>Bookings</h2>
+
+
+<div class="bookingCard" *ngFor="let booking of bookings">
+    <input type="checkbox" name="deleteBooking" id="deleteBooking" [(ngModel)]="booking.selected">
+    <p class="title">Room ID:</p>
+    <p>{{booking.RoomID}}</p>
+    <p class="title">StartTime:</p>
+    <p> {{booking.Start | date:'shortDate' }}</p>
+    <p class="title">End Time:</p>
+    <p >{{booking.End | date:'shortDate'}}</p>
+    <p class="title">Instructor:</p>
+    <p> {{booking.Instructor}}</p>
+    <p class="title">Subject:</p>
+    <p>{{booking.Subject}}</p>
+</div>
+<button (click)="deleteSelected()">Delete Bookings</button>
